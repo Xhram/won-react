@@ -176,7 +176,7 @@ function Wheel() {
         var call = Date.now();
         var deltaTime = (call - lastCall) / 1000 + 0.0001;
         setLastCall(call);
-        setSpeed(Math.max(speed - Math.max(1.5 + speed / 800, 0.1), 0));
+        setSpeed(Math.max(speed - (Math.max(1.5 + speed / 800, 0.1), 0) * deltaTime));
         setDingTikker(speed * deltaTime + dingTikker)
         if(dingTikker != dingTikker % 36){
             setDingTikker(dingTikker % 36)
